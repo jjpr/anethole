@@ -1,10 +1,15 @@
-FROM tutum/ubuntu:trusty
+FROM jupyter/scipy-notebook:latest
 
-RUN apt-get update && apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+RUN conda install --yes mayavi
 
-RUN apt-get install -y mayavi2
+RUN apt-get update && apt-get install -y openssh-server
+RUN mkdir /var/run/sshd
+# SSH login fix. Otherwise user is kicked off after login
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+EXPOSE 22
 
-Expose 8888
+RUN echo 'jovyan:password' | chpasswd
 
-CMD ipython notebook --no-browser --port 8888
+CMD ["start-sshd-and-notebook.sh"]
 
+COPY start-sshd-and-notebook.sh /usr/local/bin/
