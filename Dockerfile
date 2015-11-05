@@ -1,6 +1,8 @@
 FROM jupyter/scipy-notebook:latest
 
-RUN conda install --yes mayavi
+RUN conda install -n python2 --yes mayavi
+
+RUN apt-get install -y libglu1-mesa
 
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
