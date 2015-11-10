@@ -35,5 +35,13 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 RUN echo "export ETS_TOOLKIT=qt4" >> /etc/profile
 
 EXPOSE 22
+
+RUN mkdir /notebooks
+COPY Equation_To_Object_Instructions.ipynb /notebooks/
 # Start sshd
 CMD /usr/sbin/sshd -D
+
+# log in:
+# ssh -Y -p 2222 root@192.168.99.100
+# and issue:
+# jupyter notebook --no-browser --ip=* --notebook-dir=/notebooks
