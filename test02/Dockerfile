@@ -1,9 +1,9 @@
-FROM jupyter/scipy-notebook:latest
+FROM python:2
 
-RUN apt-get install -y libglu1-mesa
+RUN pip install numpy
+RUN apt-get update && apt-get install -y python-vtk
+RUN pip install mayavi
 
-RUN conda install -n python2 --yes mayavi
-ENV ETS_TOOLKIT qt4
 
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
@@ -13,8 +13,6 @@ EXPOSE 22
 
 RUN echo 'jovyan:password' | chpasswd
 
-CMD ["start-sshd-and-notebook.sh"]
+# Start sshd
+CMD /usr/sbin/sshd -D &
 
-COPY start-sshd-and-notebook.sh /usr/local/bin/
-
-COPY Equation_To_Object_Instructions.ipynb /home/jovyan/work/

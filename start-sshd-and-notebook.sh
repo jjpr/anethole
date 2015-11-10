@@ -15,4 +15,4 @@ fi
 /usr/sbin/sshd -D &
 
 # Start the notebook server
-exec su $NB_USER -c "env PATH=$PATH jupyter notebook $*"
+exec su $NB_USER -c "env PATH=$PATH ipython notebook $*"
