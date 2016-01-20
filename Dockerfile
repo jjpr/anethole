@@ -34,6 +34,12 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 
 RUN echo "export ETS_TOOLKIT=qt4" >> /etc/profile
 
+# Add Tini
+ENV TINI_VERSION v0.8.4
+COPY tini/tini /tini
+RUN chmod +x /tini
+ENTRYPOINT ["/tini", "--"]
+
 EXPOSE 22
 
 RUN mkdir /data
