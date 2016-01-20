@@ -11,7 +11,6 @@ docker start $CONTAINER_NAME
 
 (sleep 20; open "http://$(docker-machine ip default)") &
 
-ssh -t -Y -p 2222 root@`docker-machine ip default` jupyter notebook --no-browser --ip=* --notebook-dir=/data
-
+expect -c "spawn ssh -t -Y -p 2222 root@$(docker-machine ip default) jupyter notebook --no-browser --ip=* --notebook-dir=/data; expect \"assword:\"; send \"password\r\"; interact"
 
 echo Done
