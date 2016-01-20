@@ -9,6 +9,8 @@ docker create -p 2222:22 -p 80:8888 -v ~/Documents/Kitematic/$CONTAINER_NAME/dat
 
 docker start $CONTAINER_NAME
 
+(sleep 20; open "http://$(docker-machine ip default)") &
+
 ssh -t -Y -p 2222 root@`docker-machine ip default` jupyter notebook --no-browser --ip=* --notebook-dir=/data
 
 
