@@ -44,7 +44,6 @@ ENTRYPOINT ["/tini", "--"]
 RUN mkdir /data
 RUN mkdir /data/examples
 RUN mkdir /data/notebooks
-#COPY Equation_To_Object_Instructions.ipynb /data/examples/
 
 VOLUME ["/data/notebooks/"]
 

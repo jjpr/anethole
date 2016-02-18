@@ -1,6 +1,6 @@
 import bpy
 
-filepath_input = "/data/notebooks/wrap_ruffle.obj"
+filepath_input = "/data/notebooks/wrapped_ruffle.obj"
 filepath_output = "/data/notebooks/wrapped_ruffle.stl"
 
 bpy.ops.import_scene.obj(filepath=filepath_input)
