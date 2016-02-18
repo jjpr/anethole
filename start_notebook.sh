@@ -3,9 +3,9 @@
 docker-machine start default
 eval "$(docker-machine env default)"
 
-CONTAINER_NAME=$(date "+%Y-%m-%d")-mayavi-experiments
+CONTAINER_NAME=$(date "+%Y-%m-%d")-equation-to-object
 
-docker create -p 2222:22 -p 80:8888 -v ~/Documents/Kitematic/$CONTAINER_NAME/data/notebooks:/data/notebooks --name $CONTAINER_NAME jjpr/mayavi-jupyter:latest
+docker create -p 2222:22 -p 80:8888 -v ~/Documents/Kitematic/$CONTAINER_NAME/data/notebooks:/data/notebooks --name $CONTAINER_NAME jjpr/equation-to-object:latest
 
 docker start $CONTAINER_NAME
 
