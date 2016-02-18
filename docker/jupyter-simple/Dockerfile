@@ -49,4 +49,3 @@ RUN mkdir /data/notebooks
 VOLUME ["/data/notebooks/"]
 
 CMD jupyter notebook --no-browser --ip=* --notebook-dir=/data
-
