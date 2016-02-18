@@ -5,7 +5,7 @@ eval "$(docker-machine env default)"
 
 CONTAINER_NAME=$(date "+%Y-%m-%d")-mayavi-experiments
 
-docker create -p 2222:22 -p 80:8888 -v ~/Documents/Kitematic/$CONTAINER_NAME/data/notebooks:/data/notebooks --name $CONTAINER_NAME jjpr/mayavi:latest
+docker create -p 2222:22 -p 80:8888 -v ~/Documents/Kitematic/$CONTAINER_NAME/data/notebooks:/data/notebooks --name $CONTAINER_NAME jjpr/mayavi-jupyter:latest
 
 docker start $CONTAINER_NAME
 
