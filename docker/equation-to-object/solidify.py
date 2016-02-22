@@ -9,7 +9,7 @@ obj = bpy.data.objects['grp1']
 print(obj.name)
 
 obj.modifiers.new("solidified", type="SOLIDIFY")
-obj.modifiers["solidified"].thickness = 0.1
+obj.modifiers["solidified"].thickness = 1.0
 obj.modifiers["solidified"].offset = 0.0
 
 bpy.context.scene.objects.active = obj
