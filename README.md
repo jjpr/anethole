@@ -16,6 +16,8 @@ This project aims to provide a toolkit and a tutorial which will enable any mode
 - **blender-mayavi-jupyter**:  Adds Blender to mayavi-jupyter for mesh modification.  
 - **equation-to-object**:  Adds tutorial notebook and related support files to blender-mayavi-jupyter.  
 
+#### WARNING:  Do not run these images on a server, they are not secure.  Run them only on a VM (as with Docker Toolbox on Windows or OS X) which is not accessible from a wider network.
+
 #### Prerequisites
 - A Macintosh, relatively recent (this has been tested on a MacBook Pro (Retina, 15-inch, Early 2013) running Yosemite)
 - [Docker Toolbox][3] (tested on 1.10.0)
@@ -23,13 +25,15 @@ This project aims to provide a toolkit and a tutorial which will enable any mode
 - [Meshlab][5]
 - The shell script [start_notebook.sh][6] from https://github.com/jjpr/equation_to_object
 
-#### Instructions Summary
+#### Setup Instructions
 - Install the applications from the prerequisites list.  
 - Download and run the shell script [start_notebook.sh][6].  
   - The script will start a download of a Docker image;  this download is very large (~3.7GB) and could take a long time, up to an hour on low bandwidth.  
   - once the download is complete, the script should automatically start a Docker container based on the image, SSH into it, launch a Jupyter iPython Notebook server, and open your browser to the notebook server's home page.  
   - This is all a horrible kludge, expect to do some troubleshooting.  
-- Once your browser opens to the home page of the Jupyter iPython notebook server, navigate to the Equation To Object Instructions notebook in the notebooks directory, and open it.  Follow the instructions in the notebook.  To view a non-executable version of the notebook on GitHub, go to [Equation_To_Object_Instructions][7]
+- Once your browser opens to the home page of the Jupyter iPython notebook server, navigate to the Equation To Object Instructions notebook in the examples directory, and open it.  Follow the instructions in the notebook.  
+
+To preview the Equation To Object Instructions notebook on GitHub in a non-executable form, including more detailed instructions, go to [Equation_To_Object_Instructions][7].
 
 #### Shutting Down:  
 To stop the notebook server, close and halt all open notebooks (File > Close and Halt), then, in the terminal window where jupyter is running, type Control-C.  When it asks if you want to stop the server, type y and hit enter.  To stop the container, type "docker ps" to find the name of the running container, then type "docker stop <container name>".  To stop the Docker virtual machine, type "docker-machine stop default".  
