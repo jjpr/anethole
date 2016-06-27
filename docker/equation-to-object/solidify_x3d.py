@@ -9,6 +9,9 @@ filepath_input = argv[0]
 filepath_output = argv[1]
 thickness = float(argv[2])
 
+cube = bpy.data.objects['Cube']
+bpy.context.scene.objects.unlink(cube)
+
 bpy.ops.import_scene.x3d(filepath=filepath_input)
 
 obj = bpy.data.objects['ShapeIndexedFaceSet']
