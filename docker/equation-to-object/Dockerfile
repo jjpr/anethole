@@ -10,4 +10,5 @@ COPY images/saddle_grapher.png /data/examples/images/
 
 RUN mkdir /data/tools
 COPY solidify.py /data/tools/
+COPY solidify_x3d.py /data/tools/
 
