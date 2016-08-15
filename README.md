@@ -1,6 +1,5 @@
-## Equation-to-Object Instructions
-
-A description of a process for turning mathematical expressions into physical objects using Python and 3D printing.  
+## Anethole
+### A cobbled-together toolkit for turning mathematical expressions into physical objects using Python and 3D printing.  
 
 From this ![the equation][equation] to this ![the figure][figure] to this ![the printed object][object]
 
@@ -14,16 +13,16 @@ This project aims to provide a toolkit and a tutorial which will enable any mode
 - **jupyter-simple**:  A simple setup with Jupyter notebook and scientific Python libraries. 
 - **mayavi-jupyter**:  Adds Enthought's Mayavi to jupyter-simple, with an SSH server so that the user can use X11 to view the Mayavi GUI.  
 - **blender-mayavi-jupyter**:  Adds Blender to mayavi-jupyter for mesh modification.  
-- **equation-to-object**:  Adds tutorial notebook and related support files to blender-mayavi-jupyter.  
+- **anethole**:  Adds tutorial notebook and related support files to blender-mayavi-jupyter.  
 
 #### WARNING:  Do not run these images on a server, they are not secure.  Run them only on a VM (as with Docker Toolbox on Windows or OS X) which is not accessible from a wider network.
 
 #### Prerequisites
 - A Macintosh, relatively recent (this has been tested on a MacBook Pro (Retina, 15-inch, Early 2013) running Yosemite)
-- [Docker Toolbox][3] (tested on 1.10.0)
+- [Docker for Mac][3] (tested on 1.10.0)
 - [XQuartz][4]
 - [Meshlab][5]
-- The shell script [start_notebook.sh][6] from https://github.com/jjpr/equation_to_object
+- The shell script [start_notebook.sh][6] from https://github.com/jjpr/anethole
 
 #### Setup Instructions
 - Install the applications from the prerequisites list.  
@@ -36,20 +35,20 @@ This project aims to provide a toolkit and a tutorial which will enable any mode
 To preview the Equation To Object Instructions notebook on GitHub in a non-executable form, including more detailed instructions, go to [Equation_To_Object_Instructions][7].
 
 #### Shutting Down:  
-To stop the notebook server, close and halt all open notebooks (File > Close and Halt), then, in the terminal window where jupyter is running, type Control-C.  When it asks if you want to stop the server, type y and hit enter.  To stop the container, type "docker ps" to find the name of the running container, then type "docker stop <container name>".  To stop the Docker virtual machine, type "docker-machine stop default".  
+To stop the notebook server, close and halt all open notebooks (File > Close and Halt), then, in the terminal window where jupyter is running, type Control-C.  When it asks if you want to stop the server, type y and hit enter.  To stop the container, type "docker stop anethole".  
 
 To start up again later, just run start_notebook.sh again.  There will be messages in Terminal about things already existing, but you can ignore them.  
   
 
-[equation]: docker/equation-to-object/images/ruffle_equation.png
-[figure]: docker/equation-to-object/images/wrapped_ruffle.png
-[object]: docker/equation-to-object/images/printed.png
+[equation]: docker/anethole/images/ruffle_equation.png
+[figure]: docker/anethole/images/wrapped_ruffle.png
+[object]: docker/anethole/images/printed.png
 
 [1]: http://www.python.org/
 [2]: http://www.shapeways.com/
-[3]: https://www.docker.com/products/docker-toolbox
+[3]: https://www.docker.com/products/docker#/mac
 [4]: http://www.xquartz.org/
 [5]: http://meshlab.sourceforge.net/
-[6]: https://github.com/jjpr/equation_to_object/raw/master/start_notebook.sh
-[7]: https://github.com/jjpr/equation_to_object/blob/master/docker/equation-to-object/Equation_To_Object_Instructions.ipynb
+[6]: https://github.com/jjpr/anethole/raw/master/start_notebook.sh
+[7]: https://github.com/jjpr/anethole/blob/master/docker/anethole/Equation_To_Object_Instructions.ipynb
 [8]: http://shpws.me/LJvl
