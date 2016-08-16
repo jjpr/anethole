@@ -51,4 +51,4 @@ To start up again later, just run start_notebook.sh again.  There will be messag
 [5]: http://meshlab.sourceforge.net/
 [6]: https://github.com/jjpr/anethole/raw/master/start_notebook.sh
 [7]: https://github.com/jjpr/anethole/blob/master/docker/anethole/Equation_To_Object_Instructions.ipynb
-[8]: http://shpws.me/LJvl
+[8]: https://www.shapeways.com/shops/intricate_geometries
