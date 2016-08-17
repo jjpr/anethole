@@ -3,7 +3,7 @@
 
 From this ![the equation][equation] to this ![the figure][figure] to this ![the printed object][object]
 
-This project aims to provide a toolkit and a tutorial which will enable any moderately technical user to turn a mathematical equation into a 3D printed physical object.  
+This project aims to provide a toolkit and a tutorial which will enable any moderately technical user to turn a mathematical equation into a 3D printed physical object.  You don't even need to own a 3D printer.  
 
 #### Want to skip to the end?  The example from the tutorial is available at [The Intricate Geometries shop at Shapeways][8]
 
@@ -19,10 +19,11 @@ This project aims to provide a toolkit and a tutorial which will enable any mode
 
 #### Prerequisites
 - A Macintosh, relatively recent (this has been tested on a MacBook Pro (Retina, 15-inch, Early 2013) running Yosemite)
-- [Docker for Mac][3] (tested on 1.10.0)
+- [Docker for Mac][3] (tested on 1.12.0-a)
 - [XQuartz][4]
 - [Meshlab][5]
-- The shell script [start_notebook.sh][6] from https://github.com/jjpr/anethole
+- An account at [Shapeways][2]
+- The shell script [start_notebook.sh][6] from https://github.com/jjpr/anethole (obtain the shell script either by cloning the repository from GitHub, or by downloading the script via the "Raw" link on its listing on GitHub)
 
 #### Setup Instructions
 - Install the applications from the prerequisites list.  
