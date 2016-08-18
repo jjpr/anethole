@@ -24,7 +24,10 @@ RUN apt-get update && \
     apt-get install -y \
     python-scipy
 
-RUN pip install matplotlib
+RUN apt-get update && \
+    apt-get install -y \
+    python-matplotlib \
+
 RUN pip install pandas
 RUN pip install sympy
 RUN pip install nose
