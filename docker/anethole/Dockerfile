@@ -1,4 +1,5 @@
-FROM jjpr/blender-mayavi-jupyter:latest
+FROM jjpr/blender-mayavi-jupyter:release-2016-08-17-refresh
+
 
 COPY Equation_To_Object_Instructions.ipynb /data/examples/
 
