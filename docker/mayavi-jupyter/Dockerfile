@@ -1,4 +1,4 @@
-FROM jjpr/jupyter-simple:release-2016-08-17-refresh
+FROM jjpr/jupyter-simple:latest
 
 RUN apt-get update && \
     apt-get install -y \
