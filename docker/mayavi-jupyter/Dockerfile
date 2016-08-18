@@ -8,7 +8,9 @@ RUN apt-get update && \
     apt-get install -y \
     libvtk5-dev
 
-RUN pip install mayavi
+RUN apt-get update && \
+    apt-get install -y \
+    mayavi2
 
 # Add ssh
 RUN apt-get update && \
