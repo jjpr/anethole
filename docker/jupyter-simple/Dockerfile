@@ -14,23 +14,14 @@ RUN apt-get update && \
 
 RUN apt-get update && \
     apt-get install -y \
-    python-numpy
-
-RUN apt-get update && \
-    apt-get install -y \
-    python-scipy
-
-RUN apt-get update && \
-    apt-get install -y \
-    python-matplotlib \
-    python-pandas \
-    python-sympy \
-    python-nose
-
-RUN apt-get update && \
-    apt-get install -y \
     python-pip
 
+RUN pip install numpy
+RUN pip install scipy
+RUN pip install matplotlib
+RUN pip install pandas
+RUN pip install sympy
+RUN pip install nose
 RUN pip install jupyter
 
 EXPOSE 8888
