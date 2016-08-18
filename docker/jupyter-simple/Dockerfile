@@ -26,7 +26,7 @@ RUN apt-get update && \
 
 RUN apt-get update && \
     apt-get install -y \
-    python-matplotlib \
+    python-matplotlib
 
 RUN pip install pandas
 RUN pip install sympy
