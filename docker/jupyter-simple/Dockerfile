@@ -16,7 +16,10 @@ RUN apt-get update && \
     apt-get install -y \
     python-pip
 
-RUN pip install numpy
+RUN apt-get update && \
+    apt-get install -y \
+    python-numpy
+
 RUN pip install scipy
 RUN pip install matplotlib
 RUN pip install pandas
