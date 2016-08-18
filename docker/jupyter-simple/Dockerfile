@@ -20,7 +20,10 @@ RUN apt-get update && \
     apt-get install -y \
     python-numpy
 
-RUN pip install scipy
+RUN apt-get update && \
+    apt-get install -y \
+    python-scipy
+
 RUN pip install matplotlib
 RUN pip install pandas
 RUN pip install sympy
