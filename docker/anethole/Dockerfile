@@ -1,5 +1,12 @@
 FROM jjpr/blender-mayavi-jupyter:latest
 
+RUN apt-get update && \
+    apt-get install -y \
+    texlive
+
+RUN apt-get update && \
+    apt-get install -y \
+    dvipng
 
 COPY Equation_To_Object_Instructions.ipynb /data/examples/
 
