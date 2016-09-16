@@ -8,6 +8,10 @@ RUN apt-get update && \
     apt-get install -y \
     dvipng
 
+RUN apt-get update && \
+    apt-get install -y \
+    imagemagick
+
 COPY Equation_To_Object_Instructions.ipynb /data/examples/
 
 RUN mkdir /data/examples/images
