@@ -6,6 +6,10 @@ RUN apt-get update && \
 
 RUN apt-get update && \
     apt-get install -y \
+    texlive-latex-extra
+
+RUN apt-get update && \
+    apt-get install -y \
     dvipng
 
 RUN apt-get update && \
