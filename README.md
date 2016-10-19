@@ -20,7 +20,7 @@ This project aims to provide a toolkit and a tutorial which will enable any mode
 #### Prerequisites
 - A Macintosh, relatively recent (this has been tested on a MacBook Pro (Retina, 15-inch, Early 2013) running Yosemite)
 - [Docker for Mac][3] (tested on 1.12.0-a)
-- [XQuartz][4]
+- [XQuartz][4] EDIT 2016-10-19: There is a [bug][9] in the current version of XQuartz, 2.7.9, that will prevent Anethole from working. If XQuartz 2.7.10 or later is not yet released when you read this, you may need to install [2.7.8][10]. 
 - [Meshlab][5]
 - An account at [Shapeways][2]
 - The shell script [start_notebook.sh][6] from https://github.com/jjpr/anethole (obtain the shell script either by cloning the repository from GitHub, or by downloading the script via the "Raw" link on its listing on GitHub)
@@ -53,3 +53,5 @@ To start up again later, just run start_notebook.sh again.  There will be messag
 [6]: https://github.com/jjpr/anethole/raw/master/start_notebook.sh
 [7]: https://github.com/jjpr/anethole/blob/master/docker/anethole/Equation_To_Object_Instructions.ipynb
 [8]: https://www.shapeways.com/shops/intricate_geometries
+[9]: https://bugs.freedesktop.org/show_bug.cgi?id=96260
+[10]: https://www.xquartz.org/releases/XQuartz-2.7.8.html
