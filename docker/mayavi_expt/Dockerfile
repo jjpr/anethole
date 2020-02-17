@@ -45,4 +45,4 @@ RUN jupyter nbextension enable mayavi --py --sys-prefix
 
 ENV DISPLAY :99
 
-CMD jupyter notebook --ip=0.0.0.0 --allow-root --no-browser &
+CMD jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
