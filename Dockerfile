@@ -47,4 +47,13 @@ ENV DISPLAY :99
 
 RUN mkdir -p /data/notebooks
 
-CMD jupyter notebook --ip=0.0.0.0 --allow-root --no-browser --notebook-dir=/data/notebooks
+CMD jupyter notebook --ip=0.0.0.0 --allow-root --no-browser --notebook-dir=/data
+
+RUN apt update && \
+    apt install -y  --no-install-recommends \
+    meshlab
+
+RUN mkdir -p /data/tools
+
+COPY Uniform_Mesh_Resampling.mlx /data/tools/
+COPY Uniform_Mesh_Resampling_Color.mlx /data/tools/
