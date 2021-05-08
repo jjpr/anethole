@@ -1,5 +1,7 @@
 FROM ubuntu
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt update && \
     apt install -y  --no-install-recommends \
     build-essential \
@@ -38,6 +40,8 @@ RUN pip3 install mayavi
 RUN pip3 install ipyevents
 
 RUN pip3 install xvfbwrapper
+
+RUN pip3 install Pillow
 
 RUN jupyter nbextension install mayavi --py --sys-prefix
 
