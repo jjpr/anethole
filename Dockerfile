@@ -39,6 +39,8 @@ RUN pip3 install mayavi
 
 RUN pip3 install ipyevents
 
+RUN pip3 install Pillow
+
 RUN pip3 install xvfbwrapper
 
 RUN pip3 install pymeshlab
