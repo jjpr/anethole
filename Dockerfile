@@ -1,6 +1,6 @@
 FROM ubuntu
 
-ENV DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && \
     apt install -y  --no-install-recommends \
@@ -33,7 +33,7 @@ RUN apt clean
 
 RUN pip3 install numpy
 
-RUN pip3 install jupyter
+RUN pip3 install jupyterlab
 
 RUN pip3 install mayavi
 
@@ -41,7 +41,7 @@ RUN pip3 install ipyevents
 
 RUN pip3 install xvfbwrapper
 
-RUN pip3 install Pillow
+RUN pip3 install pymeshlab
 
 RUN jupyter nbextension install mayavi --py --sys-prefix
 
@@ -51,13 +51,6 @@ ENV DISPLAY :99
 
 RUN mkdir -p /data/notebooks
 
-RUN apt update && \
-    apt install -y  --no-install-recommends \
-    meshlab
-
 RUN mkdir -p /data/tools
 
-COPY Uniform_Mesh_Resampling.mlx /data/tools/
-COPY Uniform_Mesh_Resampling_Color.mlx /data/tools/
-
-CMD jupyter notebook --ip=0.0.0.0 --allow-root --no-browser --notebook-dir=/data
+CMD jupyter lab --ip=0.0.0.0 --allow-root --no-browser --notebook-dir=/data
