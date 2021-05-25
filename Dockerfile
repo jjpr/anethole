@@ -30,6 +30,14 @@ RUN apt update && \
     libx11-dev \
     qt5-default
 
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash
+
+RUN apt update && \
+    apt install -y  --no-install-recommends \
+    nodejs
+
+RUN npm install
+
 RUN apt clean
 
 RUN pip install numpy
@@ -47,6 +55,7 @@ RUN pip install xvfbwrapper
 RUN pip install pymeshlab
 
 RUN jupyter nbextension install mayavi --py --sys-prefix
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager ipyevents
 
 ENV DISPLAY :99
 
