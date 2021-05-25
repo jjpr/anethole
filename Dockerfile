@@ -6,11 +6,12 @@ RUN apt update && \
     apt install -y  --no-install-recommends \
     build-essential \
     git \
-    wget
+    wget \
+    dumb-init
     
 RUN apt update && \
     apt install -y  --no-install-recommends \
-    python3
+    python3.8
     
 RUN apt update && \
     apt install -y  --no-install-recommends \
@@ -47,12 +48,18 @@ RUN pip3 install pymeshlab
 
 RUN jupyter nbextension install mayavi --py --sys-prefix
 
-RUN jupyter nbextension enable mayavi --py --sys-prefix
-
 ENV DISPLAY :99
 
 RUN mkdir -p /data/notebooks
-
 RUN mkdir -p /data/tools
+RUN mkdir -p /data/examples/images
 
-CMD jupyter lab --ip=0.0.0.0 --allow-root --no-browser --notebook-dir=/data
+COPY Equation_To_Object_Instructions.ipynb /data/examples/
+COPY images/ruffle_equation.png /data/examples/images/
+COPY images/wrapped_ruffle.png /data/examples/images/
+COPY images/printed.png /data/examples/images/
+COPY images/saddle_grapher.png /data/examples/images/
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--notebook-dir=/data"]
