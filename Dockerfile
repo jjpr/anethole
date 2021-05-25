@@ -36,11 +36,19 @@ RUN apt update && \
     apt install -y  --no-install-recommends \
     nodejs
 
-RUN npm install
+RUN npm install -g npm
 
 RUN apt clean
 
+RUN pip install matplotlib
+
 RUN pip install numpy
+
+RUN pip install pandas
+
+RUN pip install scipy
+
+RUN pip install sympy
 
 RUN pip install jupyterlab
 
