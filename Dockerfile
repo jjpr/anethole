@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM python:3.8
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -8,20 +8,20 @@ RUN apt update && \
     git \
     wget \
     dumb-init
-    
-RUN apt update && \
-    apt install -y  --no-install-recommends \
-    python3.8
-    
-RUN apt update && \
-    apt install -y  --no-install-recommends \
-    python3-dev
 
-RUN apt update && \
-    apt install -y  --no-install-recommends \
-    python3-pip \
-    python3-setuptools \
-    python3-wheel
+#RUN apt update && \
+#    apt install -y  --no-install-recommends \
+#    python3.8
+#
+#RUN apt update && \
+#    apt install -y  --no-install-recommends \
+#    python3-dev
+#
+#RUN apt update && \
+#    apt install -y  --no-install-recommends \
+#    python3-pip \
+#    python3-setuptools \
+#    python3-wheel
 
 RUN apt update && \
     apt install -y  --no-install-recommends \
@@ -32,19 +32,19 @@ RUN apt update && \
 
 RUN apt clean
 
-RUN pip3 install numpy
+RUN pip install numpy
 
-RUN pip3 install jupyterlab
+RUN pip install jupyterlab
 
-RUN pip3 install mayavi
+RUN pip install mayavi
 
-RUN pip3 install ipyevents
+RUN pip install ipyevents
 
-RUN pip3 install Pillow
+RUN pip install Pillow
 
-RUN pip3 install xvfbwrapper
+RUN pip install xvfbwrapper
 
-RUN pip3 install pymeshlab
+RUN pip install pymeshlab
 
 RUN jupyter nbextension install mayavi --py --sys-prefix
 
