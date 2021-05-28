@@ -77,6 +77,8 @@ COPY images/wrapped_ruffle.png /data/examples/images/
 COPY images/printed.png /data/examples/images/
 COPY images/saddle_grapher.png /data/examples/images/
 
+ENV SHELL=/bin/bash
+
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--notebook-dir=/data"]
