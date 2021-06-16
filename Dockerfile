@@ -6,22 +6,7 @@ RUN apt update && \
     apt install -y  --no-install-recommends \
     build-essential \
     git \
-    wget \
-    dumb-init
-
-#RUN apt update && \
-#    apt install -y  --no-install-recommends \
-#    python3.8
-#
-#RUN apt update && \
-#    apt install -y  --no-install-recommends \
-#    python3-dev
-#
-#RUN apt update && \
-#    apt install -y  --no-install-recommends \
-#    python3-pip \
-#    python3-setuptools \
-#    python3-wheel
+    wget
 
 RUN apt update && \
     apt install -y  --no-install-recommends \
