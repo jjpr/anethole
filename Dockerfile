@@ -12,8 +12,7 @@ RUN apt update && \
     apt install -y  --no-install-recommends \
     xvfb \
     x11-utils \
-    libx11-dev \
-    qt5-default
+    libx11-dev 
 
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash
 
